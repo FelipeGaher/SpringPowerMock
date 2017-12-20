@@ -1,0 +1,12 @@
+# Datasource
+spring:
+    jpa:
+       database-platform: org.hibernate.dialect.H2Dialect
+      
+    datasource:
+       type : org.h2.jdbcx.JdbcDataSource
+       driver-class-name: org.h2.Driver
+       url: jdbc:h2:mem:AZ;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;Mode=Oracle;INIT=RUNSCRIPT FROM 'classpath:init.sql'
+       username: sa
+       password:
+       

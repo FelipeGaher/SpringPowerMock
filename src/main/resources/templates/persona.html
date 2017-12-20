@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" />
+<title>Peronillas</title>
+</head>
+<body>
+<h1>Listado de personas</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>NAME</th>
+				<th>AGE</th>
+			</tr>
+		</thead>
+		<tbody th:each="person : ${people}">
+			<tr>
+				<th th:text="${person.name}"></th>
+				<th th:text="${person.age}"></th>
+			</tr>
+		</tbody>
+	</table>
+	<form action="#" th:action="@{/persona/add}"
+		th:object="${person}" method="post">
+
+		<p>
+			Name: <input type="text" th:field="*{name}" />
+		</p>
+		<p>
+			Age: <input type="number" th:field="*{age}" />
+		</p>
+		<p>
+			<input type="submit" value="Add" />
+		</p>
+
+	</form>
+	
+</body>
+</html>
